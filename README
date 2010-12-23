@@ -1,0 +1,44 @@
+RiTunes
+=======
+
+Welcome to the Ruby iTunes Search rake task. Now you can search the iTunes API for digital media or apps using Ruby & Rake!
+
+Requirements
+------------
+
+You will need Ruby 1.86 or higher. Rails is not required, but the following gems are needed:
+
+- Ruby Gems
+- Rake Gem (Ruby Make)
+- Mechanize Gem (HTTP Spoofer)
+- JSON Gem (JSON Parser)
+- Nokogiri Gem (XML Parser)
+
+A MySQL database is also needed for storing your search results.
+
+Features
+--------
+Public or Private iTunes API Search Methods
+A library of bulk SQL import methods (taken from another LWE project, very useful!)
+Two example setups
+
+Limitations
+------------
+Public API searches work very well. However the private API search is a proof of concept for
+educational purposes only. The data format returned by the Private API is intended for consumption 
+by the iTunes binary. It appears to be a kludge of XML data, embedded HTML, etc... all very custom.
+Feel free to build your own parser and contribute it back to RiTunes. :D
+
+Installation
+------------
+ 1. Install Ruby 1.86+ and the Gems listed above (latest version should work)
+ 2. Set your MySQL username/password/address in the "configure_ritunes" method
+ 3. Modify or create your own search parameters, see "_example1.rb" and "_example2.rb"
+ 4. Run from the command line as follows :
+     `rake ritunes:search -src=_example1.rb`
+     `rake ritunes:search_private -src=_example1.rb`
+
+To Do
+-----
+ 1. Include some example queries for getting your results out of the database.
+ 2. Write a simple parser the iTunes Private API for educational purposes, blah blah blah.
